@@ -19,7 +19,7 @@ templates = Jinja2Templates(directory=Path(__file__).parent / "templates")
 
 
 @app.get("/", response_class=HTMLResponse)
-async def dashboard(request: Request):
+def dashboard(request: Request):
     summary = get_dashboard_summary()
     return templates.TemplateResponse(
         request=request,
@@ -29,25 +29,26 @@ async def dashboard(request: Request):
 
 
 @app.get("/api/revenue-trend")
-async def revenue_trend():
+def revenue_trend():
     return get_revenue_trend()
 
 
 @app.get("/api/top-products")
-async def top_products(limit: int = 10):
+def top_products(limit: int = 10):
     return get_top_products(limit=limit)
 
 
 @app.get("/api/order-status")
-async def order_status():
+def order_status():
     return get_order_status_breakdown()
 
 
 @app.get("/api/category-performance")
-async def category_performance():
+def category_performance():
     return get_category_performance()
 
 
 @app.get("/api/summary")
-async def summary():
+def summary():
     return get_dashboard_summary()
+

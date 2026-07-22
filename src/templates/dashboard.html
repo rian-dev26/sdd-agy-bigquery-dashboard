@@ -16,15 +16,15 @@
     <div class="summary-cards">
         <div class="summary-card">
             <div class="label">Total Orders</div>
-            <div class="value">{{ "{:,}".format(summary.total_orders) }}</div>
+            <div class="value">{{ "{:,}".format(summary.total_orders or 0) }}</div>
         </div>
         <div class="summary-card">
             <div class="label">Total Revenue</div>
-            <div class="value">${{ "{:,.2f}".format(summary.total_revenue) }}</div>
+            <div class="value">${{ "{:,.2f}".format(summary.total_revenue or 0.0) }}</div>
         </div>
         <div class="summary-card">
             <div class="label">Avg Order Value</div>
-            <div class="value">${{ "{:,.2f}".format(summary.avg_order_value) }}</div>
+            <div class="value">${{ "{:,.2f}".format(summary.avg_order_value or 0.0) }}</div>
         </div>
     </div>
 
