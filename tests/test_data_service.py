@@ -21,9 +21,12 @@ def reset_client_singleton():
 def test_get_bigquery_client_default(monkeypatch):
     monkeypatch.delenv("GCP_PROJECT", raising=False)
     monkeypatch.delenv("GOOGLE_CLOUD_PROJECT", raising=False)
-    with patch("google.cloud.bigquery.Client") as mock_client:
+    mock_sub = MagicMock()
+    mock_sub.returncode = 0
+    mock_sub.stdout = "sdd-agy-cli-d69221667e\n"
+    with patch("subprocess.run", return_value=mock_sub), patch("google.cloud.bigquery.Client") as mock_client:
         client = get_bigquery_client()
-        mock_client.assert_called_once_with(project="bigquery-public-data")
+        mock_client.assert_called_once_with(project="sdd-agy-cli-d69221667e")
 
 def test_get_bigquery_client_env_override(monkeypatch):
     monkeypatch.setenv("GCP_PROJECT", "my-custom-gcp-project")

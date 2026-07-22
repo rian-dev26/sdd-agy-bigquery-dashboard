@@ -1,4 +1,5 @@
 import os
+import subprocess
 from google.cloud import bigquery
 
 DATASET_ID = "bigquery-public-data.thelook_ecommerce"
@@ -8,12 +9,29 @@ _client = None
 def get_bigquery_client() -> bigquery.Client:
     global _client
     if _client is None:
-        project_id = (
-            os.getenv("GCP_PROJECT")
-            or os.getenv("GOOGLE_CLOUD_PROJECT")
-            or "bigquery-public-data"
-        )
-        _client = bigquery.Client(project=project_id)
+        project_id = os.getenv("GCP_PROJECT") or os.getenv("GOOGLE_CLOUD_PROJECT")
+        if not project_id or project_id == "bigquery-public-data":
+            try:
+                res = subprocess.run(
+                    ["gcloud", "config", "get-value", "project"],
+                    capture_output=True,
+                    text=True,
+                    timeout=5,
+                )
+                if res.returncode == 0:
+                    lines = [line.strip() for line in res.stdout.strip().splitlines() if line.strip()]
+                    if lines and lines[-1] != "(unset)":
+                        project_id = lines[-1]
+            except Exception:
+                pass
+
+        if project_id == "bigquery-public-data":
+            project_id = None
+
+        if project_id:
+            _client = bigquery.Client(project=project_id)
+        else:
+            _client = bigquery.Client()
     return _client
 
 
