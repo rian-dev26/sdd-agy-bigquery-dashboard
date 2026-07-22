@@ -1,7 +1,21 @@
+import os
 import pandas as pd
 from pathlib import Path
+from google.cloud import bigquery
 
 DATA_DIR = Path(__file__).parent.parent / "data"
+DATASET_ID = "bigquery-public-data.thelook_ecommerce"
+
+_client = None
+
+
+def get_bigquery_client() -> bigquery.Client:
+    global _client
+    if _client is None:
+        project_id = os.getenv("GCP_PROJECT") or os.getenv("GOOGLE_CLOUD_PROJECT") or "bigquery-public-data"
+        _client = bigquery.Client(project=project_id)
+    return _client
+
 
 
 def get_revenue_trend() -> list[dict]:
