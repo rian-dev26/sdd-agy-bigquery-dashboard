@@ -2,6 +2,8 @@
 
 > A modern, real-time web application built with **FastAPI**, **Jinja2**, and **Google BigQuery**, fully containerized and ready for **Google Cloud Run** deployment.
 
+🌐 **Live Demo Website**: [https://bigquery-dashboard-one.vercel.app/](https://bigquery-dashboard-one.vercel.app/)
+
 ---
 
 ## 🌟 Features
@@ -14,6 +16,7 @@
   - 🏷️ **Category Performance**: Measures performance across product categories.
   - 📊 **Executive Summary**: High-level KPIs including Total Revenue, Total Orders, and Average Order Value (AOV).
 - **Cloud Run Ready**: Containerized with Docker and configured for serverless auto-scaling on GCP.
+- **Vercel Supported**: Seamless serverless deployment with automated CSV fallback.
 
 ---
 
@@ -23,7 +26,14 @@
 - **Templating & UI**: Jinja2, HTML5, Vanilla CSS
 - **Data Warehouse**: [Google BigQuery](https://cloud.google.com/bigquery) (`bigquery-public-data.thelook_ecommerce`)
 - **Containerization**: Docker, Google Cloud Build
-- **Deployment Platform**: [Google Cloud Run](https://cloud.google.com/run)
+- **Deployment Platform**: [Google Cloud Run](https://cloud.google.com/run) / [Vercel](https://vercel.com)
+
+---
+
+## 🌐 Live Demo
+
+Visit the deployed application on Vercel:
+👉 **[https://bigquery-dashboard-one.vercel.app/](https://bigquery-dashboard-one.vercel.app/)**
 
 ---
 
@@ -39,7 +49,7 @@
 
 1. **Clone the repository:**
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/rian-dev26/sdd-agy-bigquery-dashboard.git
    cd sdd-agy-bigquery-dashboard
    ```
 
@@ -106,6 +116,8 @@ gcloud run deploy bigquery-dashboard \
 ├── Dockerfile              # Docker container build instructions
 ├── pyproject.toml          # Project metadata & Python dependencies
 ├── README.md               # Project documentation
+├── requirements.txt        # Vercel deployment dependencies
+├── vercel.json             # Vercel routing configuration
 └── src/
     ├── main.py             # FastAPI entrypoint & route handlers
     ├── data_service.py     # BigQuery query client & data aggregation logic
