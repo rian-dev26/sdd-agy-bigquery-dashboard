@@ -2,7 +2,8 @@
 
 > A modern, real-time web application built with **FastAPI**, **Jinja2**, and **Google BigQuery**, fully containerized and ready for **Google Cloud Run** deployment.
 
-🌐 **Live Demo Website**: [https://bigquery-dashboard-one.vercel.app/](https://bigquery-dashboard-one.vercel.app/)
+🌐 **Live Demo (Cloud Shell Preview)**: [https://8080-cs-528420062492-default.cs-asia-southeast1-kelp.cloudshell.dev/?authuser=0](https://8080-cs-528420062492-default.cs-asia-southeast1-kelp.cloudshell.dev/?authuser=0)  
+⚡ **Production Demo (Vercel)**: [https://bigquery-dashboard-one.vercel.app/](https://bigquery-dashboard-one.vercel.app/)
 
 ---
 
@@ -30,10 +31,12 @@
 
 ---
 
-## 🌐 Live Demo
+## 🌐 Live URLs & Previews
 
-Visit the deployed application on Vercel:
-👉 **[https://bigquery-dashboard-one.vercel.app/](https://bigquery-dashboard-one.vercel.app/)**
+- **Google Cloud Shell Preview (Live GCP BigQuery Data)**:  
+  👉 **[https://8080-cs-528420062492-default.cs-asia-southeast1-kelp.cloudshell.dev/?authuser=0](https://8080-cs-528420062492-default.cs-asia-southeast1-kelp.cloudshell.dev/?authuser=0)**
+- **Vercel Serverless Deployment**:  
+  👉 **[https://bigquery-dashboard-one.vercel.app/](https://bigquery-dashboard-one.vercel.app/)**
 
 ---
 
