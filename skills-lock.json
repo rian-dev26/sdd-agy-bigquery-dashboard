@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "bigquery-basics": {
+      "source": "google/skills",
+      "sourceType": "github",
+      "skillPath": "skills/cloud/bigquery-basics/SKILL.md",
+      "computedHash": "013b6377b26503b1ff815181f9db63598b35bf833c83c96fffc6a869c4429011"
+    },
+    "cloud-run-basics": {
+      "source": "google/skills",
+      "sourceType": "github",
+      "skillPath": "skills/cloud/cloud-run-basics/SKILL.md",
+      "computedHash": "2bd6f9b3e39f1fee8ced4decdcbc1337e47bfd4af54bb2a4aee64fb595973386"
+    }
+  }
+}

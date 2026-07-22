@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "bigquery": {
+      "serverUrl": "https://bigquery.googleapis.com/mcp",
+      "transport": "http",
+      "authProviderType": "google_credentials"
+    }
+  }
+}
